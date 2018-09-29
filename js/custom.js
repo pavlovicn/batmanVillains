@@ -1,7 +1,14 @@
 
 $('.slider-for').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-	var i = (currentSlide ? currentSlide : 0) + 1;
-	$('.current').text(i);
+	var i = (currentSlide ? currentSlide : 0) + 1;	
+	if(i==1){
+		j=i;
+	}
+	else{
+		j = slick.slideCount - i + 2;
+	}
+	
+	$('.current').text(j);
 	$('.total').text(slick.slideCount);
 });
 
